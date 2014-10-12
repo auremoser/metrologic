@@ -8,8 +8,8 @@ function main() {
   var options = {
     // zoom projection to adjust starting point zoom
     zoom: 12,
-    // center_lat: 40.7127,
-    // center_lon: -74.0059,
+    // legit_lat: 40.7127,
+    // legit_lon: -74.0059,
     center_lat: 40.7217,
     center_lon: -74.0059,
     cartodb_logo: false,
@@ -28,4 +28,23 @@ function main() {
 
 }
 
+function weather(){
+	var apiKey = '8d8290d21b239f27da30f07296f3adfe';
+	var url = 'https://api.forecast.io/forecast/';
+	var lat = 40.7217;
+	var lon = -74.0059;
+	var data;
+
+	$.getJSON(url + apiKey + "/" + lat + "," + lon + "?callback=?", function(data) {
+		console.log(data);
+		$('#weather').html('The temperature is: ' + data.currently.temperature + ' ˚F');
+
+	});
+}
+
+
+
+// https://api.forecast.io/forecast/8d8290d21b239f27da30f07296f3adfe/40.7217,-74.0059
+
 $(main);
+$(weather);

@@ -7,27 +7,39 @@
 		<style>
 			html, body {
 			  height: 100%;
-			  padding: 0;
 			  margin: 0;
+			  padding: 0;
 			}
 			#header {
+			  background-color: #ffff;
+			  color: #252525;
+			  font-family: 'Helvetica-Neue', sans-serif;
+			  font-size: 28px;
+			  opacity: 0.4;
 			  padding-top: 2px;
 			  text-align: center;
 			  text-transform: uppercase;
-			  color: #252525;
-			  background-color: #ffff;
-			  font-size: 28px;
-			  font-family: 'Helvetica-Neue', sans-serif;
-			  opacity: 0.4;
 			}
 			#map {
-			  position: absolute;
-			  top: 40px;
-			  right: 0;
-			  bottom: 0%;
-			  left: 0;
-			  background-size: contain;
 			  background-repeat: no-repeat;
+			  background-size: contain;
+			  bottom: 0;
+			  left: 0;
+			  position: absolute;
+			  right: 0;
+			  top: 40px;
+			}
+			#weather {
+			  background-color: rgba(255,255,255,0.5);
+			  border-radius: 5px;
+			  color: #252525;
+			  font-family: "Helvetica-Neue", sans-serif;
+			  left: 70px;
+			  opacity: 0.7;
+			  padding: 5px;
+			  position: absolute;
+			  top: 62px;
+			  width: 280px;
 			}
 		</style>
 	</head>
@@ -35,6 +47,8 @@
 	<body>
 		<div id="header">Metrologic</div>
 		<div id="map" style="width: 100%"></div>
+		<div id="weather"><div>
+
 
 		<!-- include jquery  -->
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
