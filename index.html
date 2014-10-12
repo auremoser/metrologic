@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Meteorologic</title>
+		<link rel="shortcut icon" href="https://raw.githubusercontent.com/auremoser/metrologic/master/assets/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css"/>
@@ -41,14 +43,30 @@
 			  top: 62px;
 			  width: 280px;
 			}
+			#legend .cartodb-legend-stack {
+			  background: none;
+			  border: none;
+			  box-shadow: none;
+			  padding: 0;
+			  -webkit-box-shadow: none;
+			  -moz-box-shadow: none;
+			}
+			#legend div.cartodb-legend.custom ul li {
+			  color: #252525;
+			}
+			#legend div.cartodb-legend.custom{
+			  font: 11px "Helvetica-Neue", sans-serif;
+			  font-weight: bold;
+			  padding: 2 2;
+			  margin: 0 0 2 2;
+			}
 		</style>
 	</head>
-
 	<body>
 		<div id="header">Metrologic</div>
 		<div id="map" style="width: 100%"></div>
 		<div id="weather"><div>
-
+		<div id="legend"><div>
 
 		<!-- include jquery  -->
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
