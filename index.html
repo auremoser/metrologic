@@ -13,7 +13,7 @@
 			  padding: 0;
 			}
 			#header {
-			  background-color: #ffff;
+			  background-color: rgba(255,255,255,0.9);
 			  color: #252525;
 			  font-family: 'Helvetica-Neue', sans-serif;
 			  font-size: 28px;
@@ -32,41 +32,26 @@
 			  top: 40px;
 			}
 			#weather {
-			  background-color: rgba(255,255,255,0.5);
+			  background-color: rgba(255,255,255,0.9);
 			  border-radius: 5px;
 			  color: #252525;
-			  font-family: "Helvetica-Neue", sans-serif;
+			  font-family: 'Helvetica-Neue', sans-serif;
+			  font-size: 16px;
 			  left: 70px;
 			  opacity: 0.7;
-			  padding: 5px;
+			  padding: 8px;
 			  position: absolute;
+			  text-align: center;
 			  top: 62px;
-			  width: 280px;
+			  width: 180px;
 			}
-			#legend .cartodb-legend-stack {
-			  background: none;
-			  border: none;
-			  box-shadow: none;
-			  padding: 0;
-			  -webkit-box-shadow: none;
-			  -moz-box-shadow: none;
-			}
-			#legend div.cartodb-legend.custom ul li {
-			  color: #252525;
-			}
-			#legend div.cartodb-legend.custom{
-			  font: 11px "Helvetica-Neue", sans-serif;
-			  font-weight: bold;
-			  padding: 2 2;
-			  margin: 0 0 2 2;
-			}
+
 		</style>
 	</head>
 	<body>
 		<div id="header">Metrologic</div>
 		<div id="map" style="width: 100%"></div>
 		<div id="weather"><div>
-		<div id="legend"><div>
 
 		<!-- include jquery  -->
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

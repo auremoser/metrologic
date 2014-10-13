@@ -32,10 +32,10 @@ function main() {
 }
 
 var layerIds = {
-	'bikeParking':0,
-	'dangerousStations': 1,
+	'subwayStations':0,
+	'bikeParking':1,
 	'bikeRoutes':2,
-	'subwayStations':3
+	'dangerousStations':3,
 };
 
 function weather(){
@@ -47,25 +47,28 @@ function weather(){
 
 	$.getJSON(url + apiKey + "/" + lat + "," + lon + "?callback=?", function(data) {
 		console.log(data);
-		//rain, snow, sleet, hail, none
+		// pricipType: rain, snow, sleet, hail, none
 		var precipitation = data.currently.precipType ? data.currently.precipType : 'none';
-		$('#weather').html('The temperature is: ' + data.currently.temperature + ' ˚F' + ' Precipitation is: ' + precipitation );
-		//access sublayer and hide directly, but layer_selector does not reflect change
+		$('#weather').html('Current Temp: ' + data.currently.temperature + ' ˚F' + ' Precipitation: ' + precipitation );
+		// access sublayer and hide directly, but layer_selector does not reflect change
 		// window.overlay.getSubLayers()[1].hide()
-		//we get the layer selector button corresponding to our sublayer
+
+		// get the layer selector button corresponding to our sublayer
 		var temp = parseFloat(data.currently.temperature );
-		if(temp < 32 && (precipitation === 'snow' || precipitation === 'sleet')){
+		// winter mix (freezing and bad precipitation) = don't show bike options; show bike danger zones + subways
+		if(temp < 32 && (precipitation === 'snow' || precipitation === 'sleet' || precipitation === 'hail')){
 			disableLayer('bikeParking');
 			disableLayer('bikeRoutes');
 		}
-		if(temp > 32) {
+		// if above freezing = don't show dangerzones, show bikes + subways
+		if(temp > 32 && temp < 60 || (precipitation === 'rain')) {
 			disableLayer('dangerousStations');
 		}
-		if (temp > 65) {
+		// if nice weather = show bikes, encourage biking
+		else if(temp >= 60) {
 			disableLayer('subwayStations');
 			disableLayer('dangerousStations');
 		}
-
 	});
 }
 
@@ -76,11 +79,6 @@ function disableLayer(layerId){
 	//trigger click!
 	$(layerSelectorBtn).trigger('click');
 }
-
-// sublayer.setCartoCSS("#whateverlayer{polygon-fill: blue; polygon-opacity: 0.1;}");
-
-
-// https://api.forecast.io/forecast/8d8290d21b239f27da30f07296f3adfe/40.7217,-74.0059
 
 $(main);
 // $(weather);
