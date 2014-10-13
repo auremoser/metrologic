@@ -18,3 +18,5 @@ For context a small div in the upper left displays the current temperature and p
 * Danger Stations (2014) : [dataset](https://benwellington.cartodb.com/tables/dangerstations/public/table) | [blogpost](http://iquantny.tumblr.com/post/95097770919/fatal-cyclist-accident-this-morning-was-tragically#show-last-Point)
 * Subway Entrances (2010) : [dataset](https://nycopendata.socrata.com/Transportation/Subway-Entrances/drex-xx56?)
 
+![screenshot-for-color](https://raw.githubusercontent.com/auremoser/metrologic/master/assets/metrologic-full.jpg)
+
