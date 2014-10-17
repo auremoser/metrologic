@@ -65,7 +65,7 @@ function weather(){
 			disableLayer('dangerousStations');
 		}
 		// if nice weather = show bikes, encourage biking
-		else if(temp >= 60) {
+		else if(temp >= 60 && (precipitation === 'none')) {
 			disableLayer('subwayStations');
 			disableLayer('dangerousStations');
 		}
