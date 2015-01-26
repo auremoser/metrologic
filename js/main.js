@@ -51,7 +51,6 @@ function weather(){
 		var precipitation = data.currently.precipType ? data.currently.precipType : 'none';
 		var precipIntensity = data.daily.precipIntensityMax ? data.daily.precipIntensityMax : 'low';
 		$('#weather').html('Current Temp: ' + data.currently.temperature + ' ˚F' + ' Precipitation: ' + precipitation + ' Snowmaggedon Index: ' + precipIntensity);
-		$('#snow').html()
 		// access sublayer and hide directly, but layer_selector does not reflect change
 		// window.overlay.getSubLayers()[1].hide()
 
@@ -67,7 +66,7 @@ function weather(){
 			disableLayer('bikeParking');
 			disableLayer('bikeRoutes');
 		//you should the snowmaggedon item only if is heavy snow
-			if( precipIntensity > 0.4) $('#snowmaggedon').css({opacity:1});
+			if( precipIntensity > 0.2) $('#snowmaggedon').css({opacity:1});
 		}
 		// if above freezing = don't show dangerzones, show bikes + subways
 		if(temp > 32 && temp < 60 || (precipitation === 'rain')) {
