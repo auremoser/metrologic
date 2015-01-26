@@ -32,9 +32,9 @@
 			  top: 40px;
 			}
 			#weather {
-			  background-color: #FFFF;
+			  background-color: rgba(255,255,255,0.9);
 			  border-radius: 5px;
-			  color: #66666;
+			  color: #252525;
 			  font-family: 'Helvetica-Neue', sans-serif;
 			  font-size: 14px;
 			  left: 70px;
@@ -43,15 +43,30 @@
 			  position: absolute;
 			  text-align: left;
 			  top: 62px;
-			  width: 200px;
+			  width: 180px;
+			}
+			#snowmaggedon {
+			  background-color: #F60;
+			  color: #FFFF;
+			  font-family: 'Helvetica-Neue', sans-serif;
+			  font-size: 24px;
+			  opacity: 0;
+			  padding: 8px;
+			  position: absolute;
+			  text-align: center;
+			  top: 195px;
+			  width: 100%;
+			  z-index: 1;
 			}
 
 		</style>
 	</head>
 	<body>
 		<div id="header">Metrologic</div>
+		<div id="snowmaggedon">SNOWMAGEDDON</div>
 		<div id="map" style="width: 100%"></div>
 		<div id="weather"><div>
+
 
 		<!-- include jquery  -->
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
