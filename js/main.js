@@ -51,7 +51,6 @@ function weather(){
 		var precipitation = data.currently.precipType ? data.currently.precipType : 'none';
 		var precipIntensity = data.daily.precipIntensityMax ? data.daily.precipIntensityMax : 'low';
 		$('#weather').html('Current Temp: ' + data.currently.temperature + ' ˚F' + ' Precipitation: ' + precipitation + ' Snowmaggedon Index: ' + precipIntensity);
-		$('#snow').html()
 		// access sublayer and hide directly, but layer_selector does not reflect change
 		// window.overlay.getSubLayers()[1].hide()
 
