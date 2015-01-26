@@ -51,15 +51,23 @@ function weather(){
 		var precipitation = data.currently.precipType ? data.currently.precipType : 'none';
 		var precipIntensity = data.daily.precipIntensityMax ? data.daily.precipIntensityMax : 'low';
 		$('#weather').html('Current Temp: ' + data.currently.temperature + ' ˚F' + ' Precipitation: ' + precipitation + ' Snowmaggedon Index: ' + precipIntensity);
+		$('#snow').html()
 		// access sublayer and hide directly, but layer_selector does not reflect change
 		// window.overlay.getSubLayers()[1].hide()
 
 		// get the layer selector button corresponding to our sublayer
 		var temp = parseFloat(data.currently.temperature );
 		// winter mix (freezing and bad precipitation) = don't show bike options; show bike danger zones + subways
-		if(temp < 32 && (precipitation === 'snow' || precipitation === 'sleet' || precipitation === 'hail')){
+		if(temp < 32 || (precipitation === 'sleet' || precipitation === 'hail')){
 			disableLayer('bikeParking');
 			disableLayer('bikeRoutes');
+		}
+		if(temp < 32 && (precipitation === 'snow')){
+		//You show these layers any time it snows.
+			disableLayer('bikeParking');
+			disableLayer('bikeRoutes');
+		//you should the snowmaggedon item only if is heavy snow
+			if( precipIntensity > 0.4) $('#snowmaggedon').css({opacity:1});
 		}
 		// if above freezing = don't show dangerzones, show bikes + subways
 		if(temp > 32 && temp < 60 || (precipitation === 'rain')) {
