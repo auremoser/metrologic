@@ -8,17 +8,18 @@
 		<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css"/>
 		<style>
 			html, body {
+			  background-color: #d3d3d3;
 			  height: 100%;
 			  margin: 0;
 			  padding: 0;
 			}
 			#header {
-			  background-color: rgba(255,255,255,0.9);
+			  /*background-color: rgba(255,255,255,0.9);*/
 			  color: #252525;
 			  font-family: 'Helvetica-Neue', sans-serif;
 			  font-size: 28px;
 			  opacity: 0.4;
-			  padding-top: 2px;
+			  padding-top: 5px;
 			  text-align: center;
 			  text-transform: uppercase;
 			}
@@ -45,25 +46,47 @@
 			  top: 62px;
 			  width: 180px;
 			}
-			#snowmaggedon {
-			  background-color:  #40a0ff;
-			  color: #FFFF;
-			  font-family: 'Helvetica-Neue', sans-serif;
-			  font-size: 24px;
-			  opacity: 0.5;
-			  padding: 8px;
-			  position: absolute;
-			  text-align: center;
-			  top: 195px;
-			  width: 100%;
-			  z-index: 1;
+			#snow{
+				background: none;
+				font-family: Androgyne;
+				background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+				height: 100%;
+				left: 0;
+				opacity: 0.5;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index:1;
+				-webkit-animation: snow 10s linear infinite;
+				-moz-animation: snow 10s linear infinite;
+				-ms-animation: snow 10s linear infinite;
+				animation: snow 10s linear infinite;
 			}
-
+				@keyframes snow {
+			  	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+			  	50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+			  	100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+				}
+				@-moz-keyframes snow {
+			  	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+			  	50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+			  	100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+				}
+				@-webkit-keyframes snow {
+			  	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+			  	50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+			  	100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+				}
+				@-ms-keyframes snow {
+			  	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+			  	50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+			  	100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+				}
 		</style>
 	</head>
 	<body>
 		<div id="header">Metrologic</div>
-		<div id="snowmaggedon"><a href="http://s3.amazonaws.com/thejefflarson/ethics.html" target="_blank"><strong>SNOWMAGEDDON</strong></a></div>
+		<div id="snow"></div>
 		<div id="map" style="width: 100%"></div>
 		<div id="weather"><div>
 
