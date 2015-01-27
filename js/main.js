@@ -60,14 +60,8 @@ function weather(){
 		if(temp < 32 || (precipitation === 'sleet' || precipitation === 'hail')){
 			disableLayer('bikeParking');
 			disableLayer('bikeRoutes');
-		}
-		if(temp < 32 && (precipitation === 'snow')){
-		//You show these layers any time it snows.
-			disableLayer('bikeParking');
-			disableLayer('bikeRoutes');
-			$('#snow').css({opacity:0.7});
-		//you should the snowmaggedon item only if is heavy snow
-			if(precipIntensity > 0.1) $('#snow').css({opacity:1});
+		//show snow falling only if it is heavy snow
+			if(precipIntensity > 0.2) $('#snow').css({opacity:1});
 		}
 		// if above freezing = don't show dangerzones, show bikes + subways
 		if(temp > 32 && temp < 60 || (precipitation === 'rain')) {
